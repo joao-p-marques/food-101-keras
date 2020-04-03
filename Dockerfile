@@ -1,6 +1,3 @@
-FROM continuumio/anaconda3
+FROM jotamarques/anaconda-jupyter
 
-RUN /opt/conda/bin/conda install jupyter -y
-RUN mkdir /opt/notebooks
-
-ENTRYPOINT jupyter notebook --notebook-dir=/opt/notebooks/ --ip='*' --port=8888 --allow-root
+RUN conda install -c conda-forge keras 
